@@ -1,0 +1,46 @@
+#menu {
+  background: #0a3d62;
+  width: 100%;
+  position: fixed;
+  height: 50px;
+  color: white;
+  padding-left: 10px;
+}
+
+#menu img {
+  vertical-align: middle;
+  margin-right: 10px;
+  transition: transform 1s ease;
+}
+
+#menu:hover img {
+  transform: rotate(360deg);
+}
+
+.menu-cell {
+  height: 50px;
+  min-width: 80px;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu-cell:hover {
+  height: 50px;
+  background: #3c6382;
+}
+
+.menu-cell:active {
+  background: #eb2f06;
+  text-decoration: underline;
+}
+
+
+/* Pour garantir l'espace du menu au debut de la page */
+#space {
+  height: 50px;
+}

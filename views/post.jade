@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    link(type='text/css', rel='stylesheet', href='/post.css')
+    link(type='text/css', rel='stylesheet', href='/menu.css')
+    link(type='text/css', rel='stylesheet', href='/main.css')
+    script(src='/vote.js')
+  body
+    include menu.jade
+    #content
+      #post
+        a(href="/user/#{author}")
+          span.author @#{author}
+        span.date &nbsp;(#{date}):
+        if author == name
+          a(href="/delete/#{id}")
+            button delete
+          a(href="/edit/#{id}")
+            button edit
+        p #{content}
+        a(href="/category/#{category}")
+          .category ##{category}
+        br
+        span.votes
+          a(onclick="upvotePost('#{id}',this);")
+            img(src="/img/up#{up}.png")
+          span.score #{score}
+          a(onclick="downvotePost('#{id}',this);")
+            img(src="/img/down#{down}.png")
+        span.comments_count (#{comments_count} Commentaires)
+      #comments
+        each comment in comments
+          .comment
+            a(href="/user/#{comment.author}")
+              span.author @#{comment.author}
+            span.date &nbsp;(#{comment.date}):
+            p #{comment.content}
+            span.votes
+              a(onclick="upvoteComment('#{comment.id}',this);")
+                img(src="/img/up#{comment.up}.png")
+              span.score #{comment.score}
+              a(onclick="downvoteComment('#{comment.id}',this);")
+                img(src="/img/down#{comment.down}.png")
+      #create
+        form(method="POST",action="/comment/#{id}")
+          textarea(name="comment")
+          br
+          input(type="submit")

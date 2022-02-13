@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    link(type='text/css', rel='stylesheet', href='/index.css')
+    link(type='text/css', rel='stylesheet', href='/menu.css')
+    link(type='text/css', rel='stylesheet', href='/main.css')
+    script(src='/vote.js')
+  body
+    include menu.jade
+    #content
+      .center
+        p Username: #{name}
+        p Mail: #{mail}
+        p Score: #{score}
+      p Liste des posts:
+      #posts(style="width:100%")
+        each post in posts
+          .post
+            a(href="/user/#{name}")
+              span.author @#{name}
+            span.date &nbsp;(at #{post.date}):
+            a(href="/delete/#{post.id}")
+              button delete
+            a(href="/edit/#{post.id}")
+              button edit
+            p #{post.content}
+            a(href="/category/#{post.category}")
+              .category ##{post.category}
+            br
+            span.votes
+              a(onclick="upvotePost('#{post.id}',this);")
+                img(src="/img/up#{post.up}.png")
+              span.score #{post.score}
+              a(onclick="downvotePost('#{post.id}',this);")
+                img(src="/img/down#{post.down}.png")
+            a(href="/post/#{post.id}")
+              span.comments_count (#{post.comments_count} Commentaires)

@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    link(type='text/css', rel='stylesheet', href='/login.css')
+    link(type='text/css', rel='stylesheet', href='/main.css')
+  body
+    .center
+      img(src="/img/logo_circle.png",class="circle")
+      img(src="/img/logo_bee.png",class="bee")
+      br
+      form(method="POST")
+        if error
+          p(style="color: red") #{error}
+        input(type="email",placeholder="Adresse mail",name="mail")
+        br
+        input(type="text",placeholder="Pseudo",name="username")
+        br
+        input(type="password",placeholder="Mot de passe",name="password")
+        br
+        input(type="submit",value="Creer un compte")
+        br
+        br
+        a(href="login") Se connecter

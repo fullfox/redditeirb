@@ -1,0 +1,89 @@
+a {text-decoration: none; color: inherit;}
+
+#post {
+  border-left: solid 3px #eb2f06;
+  padding-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #6a89cc1f;
+  box-sizing: content-box;
+  transition: margin 0.2s ease;
+}
+#post h1, #news h1 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+#post h1:hover {text-decoration: underline;}
+
+#post button {background: #3c6382; color: white;border: none;padding: 3px; height: 20px;border-radius: 5px;margin-left: 2px;margin-right: 2px;}
+#post button:hover {background: #60a3bc;}
+#post button:active {background: #b71540;}
+
+.author {
+  color: white;background: #3c6382;
+}
+.author:hover {
+  background: #e55039;
+  color: white;
+}
+
+#post p {margin-top: 5px; padding-left: 5px;}
+
+.author {
+ text-decoration: underline;
+}
+
+.category {
+  display: inline-block;
+  height: 20px;
+  background: #f6b93b;
+  color: white;
+  font-style: italic;
+  padding: 1px 4px 1px 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 5px;
+}
+
+.votes img {
+  vertical-align: middle;
+  width: 20px;
+}
+.score {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.comments_count {margin-left: 10px;}
+
+
+
+.comment {
+  margin-left: 30px;
+  border-left: solid 3px #3c6382;
+  padding-bottom: 10px;
+  padding: 10px;
+  background: #6a89cc1f;
+  margin-bottom: 5px;
+}
+
+.comment h3 {margin: 0;}
+.comment p {margin: 0;}
+
+
+#create {
+  margin-left: 30px;
+  border-left: solid 3px #3c6382;
+  background: #6a89cc1f;
+  padding: 10px;
+}
+#create textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+#create input
